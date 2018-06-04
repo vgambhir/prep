@@ -1,0 +1,5 @@
+1. Implement Cloneable with just name
+  2. Interface
+  3. First repetition of word in a sentence
+  4. Twin String
+  5. Scanner use - split line, try, catch, exception

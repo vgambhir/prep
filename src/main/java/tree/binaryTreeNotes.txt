@@ -1,0 +1,26 @@
+Unlike Arrays, Linked Lists, Stack and queues, which are linear data structures, trees are hierarchical data structures.
+The topmost node is called root of the tree. The elements that are directly under an element are called its children. The element directly above something is called its parent. Finally, elements with no children are called leaves.
+
+Why
+=====
+1. represent hierarchial data. e.g File system on computer
+2. Search/Access - BST (Binary Search Tree provides some sort of ordering) provides moderate access/search(quicker than LinkedList but slower than arrays)
+3. Insertion and deletion (quicker than arrays but slower than linked list)
+4. No size restrictions like linkedList ...as compared to arrays 
+
+Application
+=============
+1. Manipulate hierarchical data.
+2. Easy search using tree traversal.
+3. Manipulate sorted lists of data.
+4. Used in Router algorithms
+5. For a multi-stage decision-making.
+
+Binary Tree
+===========
+A tree whose elements have at most 2 children is called a binary tree (typically name them the left and right child).A tree is represented by a pointer to the topmost node(root) in tree. If the tree is empty, then value of root is NULL. Binary trees are special cases of tree where every node has at most two children.
+
+BST
+====
+It is a special case of binary tree where there is some sort or ordering
+
