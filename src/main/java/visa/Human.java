@@ -4,7 +4,7 @@ import util.HelperClass;
 
 /**
  * Deep clone vs shallow clone A shallow clone will have their own copy for
- * primitive types and will share references to Object types Class needs to
+ * primitive types and will share references to Object types. Class needs to
  * implement Cloneable interface and override protected method public Object
  * clone() throws CloneNotSupportedException Shallow copy is method of copying
  * an object and is followed by default in cloning. In this method the fields of

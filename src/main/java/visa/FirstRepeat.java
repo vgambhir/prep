@@ -12,13 +12,13 @@ import util.HelperClass;
  * @author vandana
  *
  */
-public class FirstOccurence {
+public class FirstRepeat {
 
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
 		String line = sc.nextLine();
-		HelperClass.print(FirstOccurence.firstRepeated(line));
+		HelperClass.print(FirstRepeat.firstRepeated(line));
 		sc.close();
 
 	}
