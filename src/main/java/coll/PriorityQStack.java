@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 
 /**
  * Implement a stack using priority Q Stack LIFO methods that need to be
- * supported are push(element), pop() return element, peek(see top elemement),
+ * supported are push(element), pop() return element, peek(see top element),
  * isStackEmpty, searchElement(how far from top)
  * 
  * push == addFirstQ pop = removeFirstQ peel == peekFirst

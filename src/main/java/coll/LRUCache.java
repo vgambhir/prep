@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class LRUCache {
 
-	private Map<String, Node> map;
+	private Map<String, Node> map; //key
 	private Node head;
 	private Node tail;
 	private int cacheSize = -1;
@@ -21,7 +21,7 @@ public class LRUCache {
 			return "Node [key=" + key + ", val=" + val + "]";
 		}
 
-		String key;
+		String key; // acts as key in map
 		String val;
 		Node prev;
 		Node next;
@@ -35,12 +35,13 @@ public class LRUCache {
 
 	public void put(String key, String val) {
 
-		// update
+		// update remove node from list
 		if (map.containsKey(key)) {
 			Node curr = map.get(key);
 			curr.val = val;
 			Node prev = curr.prev;
 			Node next = curr.next;
+			// end of list
 			if(next == null)
 				tail = prev;
 			
@@ -53,7 +54,7 @@ public class LRUCache {
 			return;
 
 		}
-
+        // if new node and cache is not full
 		if (counter < cacheSize) {
 			Node n = new Node();
 			n.key = key;
@@ -61,7 +62,10 @@ public class LRUCache {
 			map.put(key, n);
 			addNodeToHead(n);
 			counter++;
-		} else {
+		} 
+		
+		// if cache is full delete tail from map and reference from tail and add new node to head and map
+		else {
 			// delete tail node
 			Node n = new Node();
 			n.key = key;

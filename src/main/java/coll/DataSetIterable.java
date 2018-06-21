@@ -47,7 +47,8 @@ public class DataSetIterable implements Iterable<String>{
             String nextValue = iterator.next();
             System.out.println("The next value with Iterator is: " + nextValue);
         }
- 
+        
+        // another way to iterate over Iterable interface
         for (String nextValue : dataSet) {
             System.out.println("The next value with the for Loop is: " + nextValue);
         }
