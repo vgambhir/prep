@@ -7,7 +7,7 @@ package basic;
 public class DrawCross {
 
 	public static void main(String[] args) {
-		int n = 9;
+		int n = 10;
 		
 		for (int i = 0; i < n; i++) {
 			String res = "";

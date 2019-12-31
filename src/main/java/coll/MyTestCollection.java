@@ -2,11 +2,9 @@ package coll;
 
 import java.util.Iterator;
 
-import org.junit.Test;
-
 public class MyTestCollection {
 
-	@Test
+	//@Test
 	public void test() {
 		MyCollection m = new MyCollection();
 		
