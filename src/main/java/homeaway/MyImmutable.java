@@ -13,7 +13,7 @@ import java.util.Map;
  *         setters
  */
 // mark class as final
-public final class Test {
+public final class MyImmutable {
 
 	// mark all fields as final
 	private final Date date;
@@ -31,7 +31,7 @@ public final class Test {
 	 */
 
 	
-	public Test(Date date, String n, Map<String, Date> hm) {
+	public MyImmutable(Date date, String n, Map<String, Date> hm) {
 		this.date = new Date();
 		this.name = n;
 		this.map = new HashMap<String, Date>();

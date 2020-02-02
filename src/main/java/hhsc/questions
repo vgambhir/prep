@@ -1,0 +1,11 @@
+Questions
+- immutable how to make int[] immutable intArr.clone() - will create new int arr and copy all primitives there. Or use List.toArray() //will create new object
+- deep vs shallow clone - create manally and fill all states
+- design patterns you used
+- delete duplicate rows from table - use delete command
+- how will you go about starting to build a spring application
+- find duplicate words in a given String
+-  what is hashcollision? Algorithms to take care of it? java 8 specific (linked list converted to balanced tree) log(n) max
+- list collection interfaces
+- performance issue in your application
+- OOM and garbage collection
