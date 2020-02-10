@@ -1,0 +1,18 @@
+{
+  "Pets": [
+    {
+      "Breed": "Dingo",
+      "IsFixed": false,
+      "Name": "Fido",
+      "Source": "Australia Kennel Network",
+      "Type": "Dog"
+    },
+    {
+      "Breed": "Siamese",
+      "IsFixed": true,
+      "Name": "Fluffy",
+      "Source": "Lost and Found",
+      "Type": "Cat"
+    }
+  ]
+}
