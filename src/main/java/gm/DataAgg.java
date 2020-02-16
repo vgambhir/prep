@@ -1,84 +1,122 @@
 package gm;
 
 
-
-
-
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * JSON can represent two structured types: objects and arrays.
  * An object is an unordered collection of zero or more name/value pairs. An array is an ordered sequence of zero or more values.
  * The values can be strings, numbers, booleans, null, and these two structured types.
+ * Use Jackson Object Mapper
+ * https://mkyong.com/java8/java-8-collectors-groupingby-and-mapping-example/
  */
 
 
 class Request {
 
+    @JsonProperty("Pets")
     List<Pets> petsList;
+
+    @Override
+    public String toString() {
+        return "Request{" +
+                "petsList=" + petsList +
+                '}';
+    }
 
 }
 
 class Pets {
-      String Breed;
-      boolean IsFixed;
-    String Name;
-    String Source;
-    String  Type;
-    Pets(){}
+   @JsonProperty("Breed")
+    String breed;
+    @JsonProperty("IsFixed")
+    Boolean isFixed;
+    @JsonProperty("Name")
+    String name;
+    @JsonProperty("Source")
+    String source;
+    @JsonProperty("Type")
+    String type;
+
+    Pets() {
+    }
+
+    public Boolean getIsFixed() {
+        return isFixed;
+    }
+
+    public void setIsFixed(Boolean isFixed) {
+        this.isFixed = isFixed;
+    }
     public String getBreed() {
-        return Breed;
+        return breed;
     }
 
     public void setBreed(String breed) {
-        Breed = breed;
+        this.breed = breed;
     }
 
-    public boolean isFixed() {
-        return IsFixed;
-    }
-
-    public void setFixed(boolean fixed) {
-        IsFixed = fixed;
-    }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getSource() {
-        return Source;
+        return source;
     }
 
     public void setSource(String source) {
-        Source = source;
+        this.source = source;
     }
 
     public String getType() {
-        return Type;
+        return type;
     }
 
     public void setType(String type) {
-        Type = type;
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "breed='" + breed + '\'' +
+                ", isFixed=" + isFixed +
+                ", name='" + name + '\'' +
+                ", source='" + source + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }
 
 
-
 public class DataAgg {
 
-    public static void main(final String[] argv)  {
-        //Request car = objectMapper.readValue(json, Request.class);
+    public static void main(final String[] argv) throws IOException {
+        //
+        ObjectMapper objectMapper = new ObjectMapper();
+        Request req = objectMapper.readValue(new File("petsGM.json"), Request.class);
+        System.out.println(req);
+        System.out.println("****************");
+        System.out.println(objectMapper.writeValueAsString(req));
+
+        List<Pets> petsList = req.petsList;
+        Map<String, Long> counting = petsList.stream().collect(Collectors.groupingBy(Pets::getType, Collectors.counting()));
+        System.out.println(counting);
+        Map<String, Long> countByBreed = petsList.stream().collect(Collectors.groupingBy(Pets::getBreed, Collectors.counting()));
+        System.out.println(countByBreed);
+
     }
 }
 /*

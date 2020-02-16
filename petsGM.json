@@ -13,6 +13,13 @@
       "Name": "Fluffy",
       "Source": "Lost and Found",
       "Type": "Cat"
+    },
+    {
+      "Breed": "Siamese",
+      "IsFixed": true,
+      "Name": "Fluffy1",
+      "Source": "Lost and Found",
+      "Type": "Cat"
     }
   ]
 }
